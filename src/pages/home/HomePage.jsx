@@ -1,4 +1,5 @@
 
+import { Loader } from "lucide-react";
 import Category from "../../components/category/Category";
 import HeroSection from "../../components/heroSection/HeroSection";
 import HomePageProductCard from "../../components/homePageProfuctCard/HomePageProductCard";
@@ -16,6 +17,7 @@ const HomePage = () => {
             <HomePageProductCard/>
             <Track/>
             <Testimonial/>
+            <Loader/>
         </Layout>
 
 
