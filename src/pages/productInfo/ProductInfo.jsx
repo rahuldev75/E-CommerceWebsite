@@ -21,7 +21,7 @@ const ProductInfo = () => {
                             <div className="lg:pl-20">
                                 <div className="mb-6 ">
                                     <h2 className="max-w-xl mb-6 text-xl font-semibold leading-loose tracking-wide text-gray-700 md:text-2xl dark:text-gray-300">
-                                        Intel® Core™ i5-12600HX Processor (18M Cache, up to 4.60 GHz)
+                                        Brand New Luis Vitton Shirt With Great Cooling Technology Inside
                                     </h2>
                                     <div className="flex flex-wrap items-center mb-6">
                                         <ul className="flex mb-4 mr-2 lg:mb-0">

@@ -1,11 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 const ProductDetail = () => {
+    const navigate = useNavigate()
     return (
         <div>
             <div className="py-5 flex justify-between items-center">
                 {/* text  */}
                 <h1 className=" text-xl text-pink-300 font-bold">All Product</h1>
                 {/* Add Product Button  */}
-                <button className="px-5 py-2 bg-pink-50 border border-pink-100 rounded-lg">Add Product</button>
+                <button className="px-5 py-2 bg-pink-50 border border-pink-100 rounded-lg" onClick={()=>{navigate('/addproductpage')}}>Add Product</button>
             </div>
 
             {/* table  */}

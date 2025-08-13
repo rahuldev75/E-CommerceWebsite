@@ -1,9 +1,13 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { useNavigate } from 'react-router-dom';
 import ProductDetail from '../../components/admin/ProductDetail';
 import OrderDetail from '../../components/admin/OrderDetail';
 import UserDetail from '../../components/admin/UserDetail';
 
 const AdminDashboard = () => {
+    const user = JSON.parse(localStorage.getItem('users'));
+    const navigate = useNavigate();
+
     return (
         <div>
             {/* Top */}
@@ -24,11 +28,57 @@ const AdminDashboard = () => {
                         </div>
                         {/* text  */}
                         <div className="">
-                            <h1 className=" text-center text-lg text-pink-500"><span className=" font-bold">Name :</span> Kamal Nayan Upadhyay</h1>
-                            <h1 className=" text-center text-lg text-pink-500"><span className=" font-bold">Email :</span> test@gmail.com</h1>
+                            {/* Name  */}
+                            <h1 className=" text-center text-lg text-pink-500">
+                                <span className=" font-bold">Name : </span>
+                                {user?.name}
+                            </h1>
+
+                            {/* Email  */}
+                            <h1 className=" text-center text-lg text-pink-500">
+                                <span className=" font-bold">Email : </span>
+                                {user?.email}
+                            </h1>
+
+                            {/* Date  */}
+                            <h1 className=" text-center text-lg text-pink-500">
+                                <span className=" font-bold">Date : </span>
+                                {user?.date}
+                            </h1>
+
+                            {/* Role  */}
+                            <h1 className=" text-center text-lg text-pink-500">
+                                <span className=" font-bold">Role : </span>
+                                {user?.role}
+                            </h1>
                         </div>
                     </div>
                 </div>
+
+                {/* Add Product Button */}
+                {/* <div className="mb-5 flex justify-center">
+                    <button 
+                        onClick={() => navigate('/addproductpage')}
+                        className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition duration-200 flex items-center gap-2"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width={20}
+                            height={20}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="lucide lucide-plus"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="M12 5v14" />
+                        </svg>
+                        AddProduct
+                    </button>
+                </div> */}
 
                 {/* Bottom */}
                 <div className="">
@@ -124,7 +174,7 @@ const AdminDashboard = () => {
                         </TabList>
 
                         <TabPanel>
-                            <ProductDetail/>
+                            <ProductDetail />
                         </TabPanel>
 
                         <TabPanel>
@@ -132,7 +182,7 @@ const AdminDashboard = () => {
                         </TabPanel>
 
                         <TabPanel>
-                            <UserDetail/>
+                           <UserDetail/>
                         </TabPanel>
                     </Tabs>
                 </div>
